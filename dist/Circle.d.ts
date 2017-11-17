@@ -1,7 +1,6 @@
 /// <reference types="heremaps" />
 /// <reference types="react" />
 import * as React from "react";
-import PropTypes from "prop-types";
 export interface CircleProps extends H.map.Circle.Options, H.geo.IPoint {
     strokeColor?: string;
     lineWidth?: number;
@@ -13,7 +12,7 @@ export interface CircleContext {
 }
 export declare class Circle extends React.Component<CircleProps, object> {
     static contextTypes: {
-        map: PropTypes.Requireable<any>;
+        map: any;
     };
     static defaultProps: {
         fillColor: string;

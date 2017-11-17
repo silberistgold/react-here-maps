@@ -1,7 +1,6 @@
 /// <reference types="heremaps" />
 /// <reference types="react" />
 import * as React from "react";
-import PropTypes from "prop-types";
 export interface MarkerProps extends H.map.Marker.Options, H.geo.IPoint {
     bitmap?: string;
 }
@@ -10,7 +9,7 @@ export interface MarkerContext {
 }
 export declare class Marker extends React.Component<MarkerProps, object> {
     static contextTypes: {
-        map: PropTypes.Requireable<any>;
+        map: any;
     };
     context: MarkerContext;
     private marker;

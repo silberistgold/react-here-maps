@@ -11,8 +11,7 @@
     "experimentalDecorators": true,
     "sourceMap": false,
     "inlineSourceMap": true,
-    "declaration": true,
-    "allowSyntheticDefaultImports": true
+    "declaration": true
   },
   "awesomeTypescriptLoaderOptions": {
     "resolveGlobs": true,
