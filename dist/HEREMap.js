@@ -19,6 +19,7 @@ exports.__esModule = true;
 var lodash_1 = require("lodash");
 var React = require("react");
 var ReactDOM = require("react-dom");
+var prop_types_1 = require("prop-types");
 var h_map_methods_1 = require("./mixins/h-map-methods");
 var cache_1 = require("./utils/cache");
 var get_link_1 = require("./utils/get-link");
@@ -274,7 +275,7 @@ var HEREMap = /** @class */ (function (_super) {
         return marker;
     };
     HEREMap.childContextTypes = {
-        map: React.PropTypes.object
+        map: prop_types_1["default"].object
     };
     HEREMap = __decorate([
         h_map_methods_1["default"]

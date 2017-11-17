@@ -1,6 +1,7 @@
 /// <reference types="heremaps" />
 /// <reference types="react" />
 import * as React from "react";
+import PropTypes from "prop-types";
 export interface HERELocation {
     lat: number;
     lon: number;
@@ -31,7 +32,7 @@ export interface HEREMapChildContext {
 }
 export declare class HEREMap extends React.Component<HEREMapProps, HEREMapState> implements React.ChildContextProvider<HEREMapChildContext> {
     static childContextTypes: {
-        map: React.Requireable<any>;
+        map: PropTypes.Requireable<any>;
     };
     getElement: () => Element;
     getMap: () => H.Map;

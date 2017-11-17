@@ -1,6 +1,7 @@
 import { debounce, uniqueId } from "lodash";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import PropTypes from "prop-types";
 
 import HMapMethods from "./mixins/h-map-methods";
 import cache, { onAllLoad } from "./utils/cache";
@@ -52,7 +53,7 @@ export class HEREMap
   extends React.Component<HEREMapProps, HEREMapState>
   implements React.ChildContextProvider<HEREMapChildContext> {
   public static childContextTypes = {
-    map: React.PropTypes.object,
+    map: PropTypes.object,
   };
 
   // add typedefs for the HMapMethods mixin

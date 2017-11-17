@@ -11,6 +11,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 var React = require("react");
+var prop_types_1 = require("prop-types");
 // export the Circle React component from this module
 var Circle = /** @class */ (function (_super) {
     __extends(Circle, _super);
@@ -68,7 +69,7 @@ var Circle = /** @class */ (function (_super) {
     };
     // define the context types that are passed down from a <HEREMap> instance
     Circle.contextTypes = {
-        map: React.PropTypes.object
+        map: prop_types_1["default"].object
     };
     Circle.defaultProps = {
         fillColor: "rgba(255, 255, 255, 0.5)",
