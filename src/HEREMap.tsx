@@ -1,7 +1,7 @@
 import { debounce, uniqueId } from "lodash";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import PropTypes from "prop-types";
+import * as PropTypes from "prop-types";
 
 import HMapMethods from "./mixins/h-map-methods";
 import cache, { onAllLoad } from "./utils/cache";

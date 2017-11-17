@@ -4,7 +4,7 @@
 
 import * as React from "react";
 import * as ReactDOMServer from "react-dom/server";
-import PropTypes from "prop-types";
+import * as PropTypes from "prop-types";
 
 import getDomMarkerIcon from "./utils/get-dom-marker-icon";
 import getMarkerIcon from "./utils/get-marker-icon";

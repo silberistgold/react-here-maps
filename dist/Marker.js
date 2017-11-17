@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 exports.__esModule = true;
 var React = require("react");
 var ReactDOMServer = require("react-dom/server");
-var prop_types_1 = require("prop-types");
+var PropTypes = require("prop-types");
 var get_dom_marker_icon_1 = require("./utils/get-dom-marker-icon");
 var get_marker_icon_1 = require("./utils/get-marker-icon");
 // export the Marker React component from this module
@@ -82,7 +82,7 @@ var Marker = /** @class */ (function (_super) {
     };
     // define the context types that are passed down from a <HEREMap> instance
     Marker.contextTypes = {
-        map: prop_types_1["default"].object
+        map: PropTypes.object
     };
     return Marker;
 }(React.Component));
