@@ -195,7 +195,7 @@ var HEREMap = /** @class */ (function (_super) {
     };
     HEREMap.prototype.render = function () {
         var children = this.props.children;
-        return (React.createElement("div", null,
+        return (React.createElement("div", { className: "map-root-wrapper" },
             React.createElement("div", { className: "map-container", id: "map-container-" + lodash_1.uniqueId(), style: { height: "100%" } }, children)));
     };
     HEREMap.prototype.resizeMap = function () {
@@ -257,7 +257,7 @@ var HEREMap = /** @class */ (function (_super) {
             map.addObject(polyline);
             // And zoom to its bounding rectangle
             var lineBounds = polyline.getBounds();
-            var factor = 0.5;
+            var factor = 1.5;
             var widthDeltaPerSide = lineBounds.getWidth() * factor / 2;
             var heightDeltaPerSide = lineBounds.getHeight() * factor / 2;
             var newBounds = new H.geo.Rect(lineBounds.getTop() - heightDeltaPerSide, lineBounds.getLeft() - widthDeltaPerSide, lineBounds.getBottom() + heightDeltaPerSide, lineBounds.getRight() + widthDeltaPerSide);

@@ -279,7 +279,7 @@ export class HEREMap
     const { children } = this.props;
 
     return (
-      <div>
+      <div className="map-root-wrapper">
         <div
           className="map-container"
           id={`map-container-${uniqueId()}`}
@@ -370,7 +370,7 @@ export class HEREMap
       map.addObject(polyline);
       // And zoom to its bounding rectangle
       const lineBounds = polyline.getBounds();
-      const factor = 0.5;
+      const factor = 1.5;
       const widthDeltaPerSide = lineBounds.getWidth() * factor / 2;
       const heightDeltaPerSide = lineBounds.getHeight() * factor / 2;
       const newBounds = new H.geo.Rect(lineBounds.getTop() - heightDeltaPerSide, lineBounds.getLeft() - widthDeltaPerSide, lineBounds.getBottom() + heightDeltaPerSide, lineBounds.getRight() + widthDeltaPerSide);
