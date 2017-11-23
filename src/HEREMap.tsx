@@ -136,8 +136,7 @@ export class HEREMap
         'maptile',
         'normal.day',
         256,
-        'png8',
-        { 'style': 'flame' }
+        'png8'
       );
 
       map.setBaseLayer(fleetStyleLayer);
@@ -148,11 +147,8 @@ export class HEREMap
         router
       });
 
-      console.log(this.props);
-
       // add markers and route if already given
       if (start) {
-        console.log('TRYING TO SET START')
         this.setStartIcon(map, start, false);
       }
       if (end) {

@@ -74,17 +74,15 @@ var HEREMap = /** @class */ (function (_super) {
                 imprint: null
             });
             var mapTileService = platform.getMapTileService({ 'type': 'base' });
-            var fleetStyleLayer = mapTileService.createTileLayer('maptile', 'normal.day', 256, 'png8', { 'style': 'flame' });
+            var fleetStyleLayer = mapTileService.createTileLayer('maptile', 'normal.day', 256, 'png8');
             map.setBaseLayer(fleetStyleLayer);
             // configure router
             var router = platform.getRoutingService();
             _this.setState({
                 router: router
             });
-            console.log(_this.props);
             // add markers and route if already given
             if (start) {
-                console.log('TRYING TO SET START');
                 _this.setStartIcon(map, start, false);
             }
             if (end) {
