@@ -5,7 +5,7 @@ function getScriptMap(secure) {
     var apiVersion = "v3";
     var codeVersion = "3.0";
     // get the relevant protocol for the HERE Maps API
-    var protocol = "";
+    var protocol = "http:";
     if (secure === true) {
         protocol = "https:";
     }
