@@ -350,8 +350,8 @@ export class HEREMap
 
     const polyline = new H.map.Polyline(lineString, {
       style: {
-        lineWidth: 4,
-        strokeColor: '#fa8872'
+        lineWidth: 6,
+        strokeColor: '#04b3fd'
       }
     });
 
