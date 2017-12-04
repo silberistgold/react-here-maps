@@ -16,11 +16,20 @@ export interface HERELocation {
   lon: number;
 }
 
+// declare an interface for a simple icon object
+export interface HEREIcon {
+  width: number;
+  height: number;
+  svgString: string;
+}
+
 // declare an interface containing the required and potential
 // props that can be passed to the HEREMap component
 export interface HEREMapProps extends H.Map.Options {
   appId: string;
   appCode: string;
+  startIcon: HEREIcon;
+  endIcon: HEREIcon;
   animateCenter?: boolean;
   animateZoom?: boolean;
   hidpi?: boolean;
@@ -236,15 +245,17 @@ export class HEREMap
         this.addRoute(nextProps.start, nextProps.end);
       }
     } else {
-      // nor oute to draw, remove if possibe
+      // no route to draw, remove if possible
       this.removeRouteShapeFromMap()
     }
   }
 
   private setStartIcon(map: H.Map, location: HERELocation, shouldZoomIntoView: boolean) {
-    const size = new H.math.Size(144, 100);
-    const truckIcon = new H.map.Icon(truckIconSVG(), {size: size, crossOrigin: false});
-    const startMarker = this.addMarkerToMap(map, location, truckIcon, shouldZoomIntoView);
+    const {
+      startIcon,
+    } = this.props;
+    const icon = new H.map.Icon(startIcon.svgString, {size: new H.math.Size(startIcon.width, startIcon.height), crossOrigin: false});
+    const startMarker = this.addMarkerToMap(map, location, icon, shouldZoomIntoView);
     this.setState({startMarker: startMarker});
   }
 
@@ -257,9 +268,11 @@ export class HEREMap
   }
 
   private setEndIcon(map: H.Map, location: HERELocation, shouldZoomIntoView: boolean) {
-    const size = new H.math.Size(115, 80);
-    const boxIcon = new H.map.Icon(boxIconSVG(), {size: size, crossOrigin: false});
-    const endMarker = this.addMarkerToMap(map, location, boxIcon, false)
+    const {
+      endIcon,
+    } = this.props;
+    const icon = new H.map.Icon(endIcon.svgString, {size: new H.math.Size(endIcon.width, endIcon.height), crossOrigin: false});
+    const endMarker = this.addMarkerToMap(map, location, icon, false);
     this.setState({endMarker: endMarker});
   }
 

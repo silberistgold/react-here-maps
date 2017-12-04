@@ -25,7 +25,6 @@ var cache_1 = require("./utils/cache");
 var get_link_1 = require("./utils/get-link");
 var get_platform_1 = require("./utils/get-platform");
 var get_script_map_1 = require("./utils/get-script-map");
-var icons_1 = require("./utils/icons");
 // export the HEREMap React Component from this module
 var HEREMap = /** @class */ (function (_super) {
     __extends(HEREMap, _super);
@@ -161,14 +160,14 @@ var HEREMap = /** @class */ (function (_super) {
             }
         }
         else {
-            // nor oute to draw, remove if possibe
+            // no route to draw, remove if possible
             this.removeRouteShapeFromMap();
         }
     };
     HEREMap.prototype.setStartIcon = function (map, location, shouldZoomIntoView) {
-        var size = new H.math.Size(144, 100);
-        var truckIcon = new H.map.Icon(icons_1.truckIconSVG(), { size: size, crossOrigin: false });
-        var startMarker = this.addMarkerToMap(map, location, truckIcon, shouldZoomIntoView);
+        var startIcon = this.props.startIcon;
+        var icon = new H.map.Icon(startIcon.svgString, { size: new H.math.Size(startIcon.width, startIcon.height), crossOrigin: false });
+        var startMarker = this.addMarkerToMap(map, location, icon, shouldZoomIntoView);
         this.setState({ startMarker: startMarker });
     };
     HEREMap.prototype.removeStartIcon = function (map) {
@@ -179,9 +178,9 @@ var HEREMap = /** @class */ (function (_super) {
         this.setState({ startMarker: null });
     };
     HEREMap.prototype.setEndIcon = function (map, location, shouldZoomIntoView) {
-        var size = new H.math.Size(115, 80);
-        var boxIcon = new H.map.Icon(icons_1.boxIconSVG(), { size: size, crossOrigin: false });
-        var endMarker = this.addMarkerToMap(map, location, boxIcon, false);
+        var endIcon = this.props.endIcon;
+        var icon = new H.map.Icon(endIcon.svgString, { size: new H.math.Size(endIcon.width, endIcon.height), crossOrigin: false });
+        var endMarker = this.addMarkerToMap(map, location, icon, false);
         this.setState({ endMarker: endMarker });
     };
     HEREMap.prototype.removeEndIcon = function (map) {
@@ -242,8 +241,8 @@ var HEREMap = /** @class */ (function (_super) {
         });
         var polyline = new H.map.Polyline(lineString, {
             style: {
-                lineWidth: 4,
-                strokeColor: '#fa8872'
+                lineWidth: 6,
+                strokeColor: '#04b3fd'
             }
         });
         this.setState({

@@ -6,9 +6,16 @@ export interface HERELocation {
     lat: number;
     lon: number;
 }
+export interface HEREIcon {
+    width: number;
+    height: number;
+    svgString: string;
+}
 export interface HEREMapProps extends H.Map.Options {
     appId: string;
     appCode: string;
+    startIcon: HEREIcon;
+    endIcon: HEREIcon;
     animateCenter?: boolean;
     animateZoom?: boolean;
     hidpi?: boolean;
